@@ -1,0 +1,26 @@
+{
+  "name": "@lyrasoft/skote",
+  "version": "3.2.0",
+  "description": "",
+  "author": "Themesbrand",
+  "repository": "git@github.com:lyrasoft/admin-theme.git",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp --watching=1",
+    "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules"
+  },
+  "publishConfig": {
+    "registry": "https://github.com/lyrasoft/admin-theme"
+  },
+  "devDependencies": {
+    "@windwalker-io/fusion": "^1.1.6",
+    "bootstrap": "^5.3.3",
+    "gulp": "^4.0",
+    "sass": "^1.85.0"
+  },
+  "resolutions": {
+    "micromatch": "^4.0.8",
+    "postcss": "^8.4.31",
+    "sass": "1.77.6"
+  }
+}

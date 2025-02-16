@@ -1,0 +1,28 @@
+@import "bootstrap/scss/functions";
+
+$prefix: "bs-";
+
+// Colors
+
+
+// Typography
+$font-google: "Roboto";
+$font-size-base: 1rem;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+// Cards
+$card-border-width: 0;
+$card-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+
+// Form
+$input-btn-padding-y: .47rem;
+$input-btn-padding-x: .75rem;
+
+$input-btn-padding-y-sm: .25rem;
+$input-btn-padding-x-sm: .5rem;
+
+$input-btn-padding-y-lg: .5rem;
+$input-btn-padding-x-lg: 1rem;
