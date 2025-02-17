@@ -1,5 +1,9 @@
-@import "variables";
+@import "nexus-variables";
 @import "../tabler/scss/core";
 
 // Override
 @import "layout/navbar";
+
+@import "components/buttons";
+@import "components/tables";
+@import "components/nav";

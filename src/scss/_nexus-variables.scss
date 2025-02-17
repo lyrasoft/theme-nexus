@@ -1,0 +1,56 @@
+@import "bootstrap/scss/functions";
+
+$prefix: "bs-";
+
+// Colors
+
+
+// Typography
+$font-google: "Roboto";
+$font-size-base: 1rem;
+$font-size-sm: $font-size-base * .875;
+$font-size-lg: $font-size-base * 1.25;
+
+$line-height-base: 1.5;
+$line-height-sm: 1.25;
+$line-height-lg: 2;
+
+$h1-font-size: $font-size-base * 1.75 !default;
+$h2-font-size: $font-size-base * 1.5 !default;
+$h3-font-size: $font-size-base * 1.25 !default;
+$h4-font-size: $font-size-base * 1.15 !default;
+$h5-font-size: $font-size-base * 1 !default;
+$h6-font-size: $font-size-base * .875 !default;
+
+// Navbar
+$navbar-brand-font-size: $font-size-lg !default;
+
+// Cards
+$card-border-width: 0;
+$card-box-shadow: 0 0.75rem 1.5rem rgba(18, 38, 63, 0.03);
+$card-spacer-x: 1.25rem;
+$card-spacer-y: 1.25rem;
+
+// Buttons
+$input-btn-font-size-sm: $font-size-sm;
+$input-btn-font-size-lg: $font-size-lg;
+$input-btn-line-height-sm: $line-height-base;
+$input-btn-line-height-lg: $line-height-base;
+
+// Badge
+$badge-color: white;
+
+// Form
+$input-btn-padding-y: .47rem;
+$input-btn-padding-x: .75rem;
+
+$input-btn-padding-y-sm: .25rem;
+$input-btn-padding-x-sm: .5rem;
+
+$input-btn-padding-y-lg: .5rem;
+$input-btn-padding-x-lg: 1rem;
+
+$form-label-font-size: $font-size-base !default;
+
+// Pagination
+$pagination-padding-x: .75rem;
