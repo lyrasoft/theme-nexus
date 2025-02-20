@@ -1,0 +1,29 @@
+
+.l-sidebar.navbar {
+  box-shadow: none;
+}
+
+.l-sidebar.navbar .navbar-nav {
+  padding-left: .75rem;
+  gap: .25rem;
+
+  .dropdown-menu {
+    gap: .25rem;
+
+    .dropdown-item {
+      //padding-top: .25rem;
+      //padding-bottom: .25rem;
+    }
+
+    .dropdown-item.active {
+      background: transparent;
+      color: $dark;
+      font-weight: 700;
+    }
+  }
+
+  .nav-link.active {
+    background: $primary;
+    color: color-contrast($primary);
+  }
+}

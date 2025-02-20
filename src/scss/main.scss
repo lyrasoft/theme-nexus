@@ -2,8 +2,12 @@
 @import "../tabler/scss/core";
 
 // Override
-@import "layout/navbar";
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/banner";
+@import "layout/footer";
 
+@import "components/navbar";
 @import "components/buttons";
 @import "components/dropdown";
 @import "components/tables";
