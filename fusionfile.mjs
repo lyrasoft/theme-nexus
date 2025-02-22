@@ -1,5 +1,7 @@
 
-import { watch, sass, wait } from '@windwalker-io/fusion';
+import { watch, sass, wait, copy } from '@windwalker-io/fusion';
+import fs from 'fs';
+import path from 'path';
 
 export function css() {
   watch([
@@ -17,4 +19,47 @@ export function css() {
       minify: 'separate_file'
     })
   )
+}
+
+const copyList = [
+  'ribble'
+];
+
+export async function install() {
+  deleteExists('src/js/libs/');
+
+  const streams = [];
+
+  for (const item of copyList) {
+    const path = `node_modules/${item}/**/*`;
+    const dest = `src/js/libs/${item}/`;
+
+    const p = await copy(path, dest);
+
+    p.on('end', () => {
+      console.log(`[Copy] ${path} => ${dest}`);
+    });
+
+    streams.push(p);
+  }
+
+  return wait(...streams);
+}
+
+function deleteExists(dir) {
+  if (!fs.existsSync(dir)) {
+    return;
+  }
+
+  const subDirs = fs.readdirSync(dir, { withFileTypes: true });
+
+  subDirs.forEach((subDir) => {
+    if (subDir.isSymbolicLink() || subDir.isFile()) {
+      fs.unlinkSync(path.join(dir, subDir.name));
+    } else if (subDir.isDirectory()) {
+      deleteExists(path.join(dir, subDir.name));
+    }
+  });
+
+  fs.rmdirSync(dir);
 }

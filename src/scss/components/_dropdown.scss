@@ -2,9 +2,19 @@
   display: inline-block;
 }
 
-.navbar-vertical .nav-link.dropdown-toggle::after {
-  position: relative;
-  top: 0;
+//.navbar-vertical .nav-link.dropdown-toggle::after {
+//  position: relative;
+//  top: 0;
+//}
+
+.dropdown-menu {
+  animation-name: DropDownSlide;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+
+  &.show {
+    top: 100% !important;
+  }
 }
 
 .dropdown-toggle::after {
@@ -16,8 +26,19 @@
   height: auto;
   position: relative;
   float: right;
+  transition: all .3s;
 }
 
-.dropdown-toggle.show::after {
+.dropdown-toggle.show {
   //transform: translateY(-50%);
+}
+
+
+@keyframes DropDownSlide {
+  from {
+    transform: translateY(10px)
+  }
+  to {
+    transform: translateY(0)
+  }
 }
