@@ -1,17 +1,21 @@
 
 .l-sidebar.navbar {
-  box-shadow: none;
-
+  --nexus-sidebar-bg: #{$sidebar-bg};
   --nexus-sidebar-menu-item-color: var(--bs-dropdown-color);
   --nexus-sidebar-nav-item-active-bg: #{$sidebar-nav-item-active-bg};
   --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-nav-item-active-bg)};
+
+  box-shadow: none;
+  padding-bottom: 75px;
 }
 
 .l-sidebar.navbar[data-bs-theme="dark"] {
-  background-color: $sidebar-dark-bg;
+  --nexus-sidebar-bg: #{$sidebar-dark-bg};
   --nexus-sidebar-menu-item-color: #{$sidebar-dark-menu-item-color};
   --nexus-sidebar-nav-item-active-bg: #{$sidebar-dark-nav-item-active-bg};
   --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-dark-nav-item-active-bg)};
+
+  background-color: $sidebar-dark-bg;
 
   .navbar-nav {
     .dropdown-menu {
