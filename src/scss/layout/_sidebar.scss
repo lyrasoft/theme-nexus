@@ -1,38 +1,47 @@
 
 .l-sidebar.navbar {
-  --nexus-sidebar-bg: #{$sidebar-bg};
-  --nexus-sidebar-menu-item-color: var(--bs-dropdown-color);
-  --nexus-sidebar-nav-item-active-bg: #{$sidebar-nav-item-active-bg};
-  --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-nav-item-active-bg)};
+  --nx-sidebar-bg: #{$sidebar-bg};
+  --nx-sidebar-menu-item-color: var(--bs-dropdown-color);
+  --nx-sidebar-nav-item-active-bg: #{$sidebar-nav-item-active-bg};
+  --nx-sidebar-nav-item-active-color: #{color-contrast($sidebar-nav-item-active-bg, $white, $white)};
 
   box-shadow: none;
   padding-bottom: 75px;
 }
 
 .l-sidebar.navbar[data-bs-theme="dark"] {
-  --nexus-sidebar-bg: #{$sidebar-dark-bg};
-  --nexus-sidebar-menu-item-color: #{$sidebar-dark-menu-item-color};
-  --nexus-sidebar-nav-item-active-bg: #{$sidebar-dark-nav-item-active-bg};
-  --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-dark-nav-item-active-bg)};
+  --nx-sidebar-bg: #{$sidebar-dark-bg};
+  --nx-sidebar-menu-item-color: #{$sidebar-dark-menu-item-color};
+  --nx-sidebar-nav-item-active-bg: #{$sidebar-dark-nav-item-active-bg};
+  --nx-sidebar-nav-item-active-color: #{color-contrast($sidebar-dark-nav-item-active-bg)};
 
   background-color: $sidebar-dark-bg;
 
   .navbar-nav {
     .dropdown-menu {
-      --bs-dropdown-link-active-color: #{$body-color-dark};
-      --bs-dropdown-link-hover-color: #{$body-color-dark};
+      --bs-dropdown-link-active-color: white;
+      --bs-dropdown-link-hover-color: white;
     }
   }
 }
 
 .l-sidebar.navbar .navbar-nav {
-  --bs-nav-link-color: var(--nexus-sidebar-menu-item-color);
+  --bs-nav-link-color: var(--nx-sidebar-menu-item-color);
 
   padding-left: .75rem;
   gap: .25rem;
 
   .nav-item.active::after {
     border: none;
+  }
+
+  .nav-link.active {
+    background: var(--nx-sidebar-nav-item-active-bg);
+    color: var(--nx-sidebar-nav-item-active-color);
+  }
+
+  .nav-icon {
+    opacity: .85;
   }
 
   .dropdown-toggle.show::after {
@@ -55,7 +64,7 @@
 
       //padding-top: .25rem;
       //padding-bottom: .25rem;
-      color: var(--nexus-sidebar-menu-item-color);
+      color: var(--nx-sidebar-menu-item-color);
       display: inline-block;
       transition: all .3s;
     }
@@ -84,10 +93,5 @@
 
   .dropdown-menu.show {
 
-  }
-
-  .nav-link.active {
-    background: var(--nexus-sidebar-nav-item-active-bg);
-    color: var(--nexus-sidebar-nav-item-active-color);
   }
 }

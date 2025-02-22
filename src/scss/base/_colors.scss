@@ -1,0 +1,25 @@
+@if $enable-dark-mode {
+  $displays: (
+    block,
+    inline-block,
+    flex,
+    inline-flex,
+    none,
+  );
+
+  @include color-mode(dark) {
+    @each $display in $displays {
+      .d-dark-#{$display} {
+        display: $display !important;
+      }
+    }
+  }
+
+  @include color-mode(light) {
+    @each $display in $displays {
+      .d-light-#{$display} {
+        display: $display !important;
+      }
+    }
+  }
+}
