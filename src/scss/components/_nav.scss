@@ -1,3 +1,16 @@
 .nav-link {
-  gap: .25rem;
+  display: inline-block;
+}
+
+.navbar-vertical {
+  .nav-link.dropdown-toggle {
+    position: relative;
+  }
+
+  .nav-link.dropdown-toggle::after {
+    //position: absolute;
+    //right: .5rem;
+    //top: 50%;
+    //transform: translateY(-50%), rotate(-45deg);
+  }
 }

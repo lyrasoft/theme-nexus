@@ -1240,7 +1240,9 @@ __metadata:
     "@windwalker-io/fusion": "npm:^1.1.6"
     bootstrap: "npm:^5.3.3"
     gulp: "npm:^4.0"
+    ribble: "npm:^1.0.4"
     sass: "npm:^1.85.0"
+    vanilla-ripplejs: "npm:^1.0.6"
   languageName: unknown
   linkType: soft
 
@@ -5470,6 +5472,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ribble@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "ribble@npm:1.0.4"
+  checksum: 10c0/4edd7e8d78154025b63c3114281d9ab5899ddc023b0cf1f88cfcfa2f86c26cc1968f423899b97d53bff10415988583614db1e56492dc1ae1752b7de6855ae165
+  languageName: node
+  linkType: hard
+
 "rimraf@npm:^5.0.5":
   version: 5.0.10
   resolution: "rimraf@npm:5.0.10"
@@ -6456,6 +6465,13 @@ __metadata:
   version: 3.0.0
   resolution: "value-or-function@npm:3.0.0"
   checksum: 10c0/78a75b44543bb70ea3eee1804bbb101558f422335e3b62ed8864deeb85295efab1b109f607c3806b13c2fc48630d93f6c564b2796377a01a6302d355323ecebe
+  languageName: node
+  linkType: hard
+
+"vanilla-ripplejs@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "vanilla-ripplejs@npm:1.0.6"
+  checksum: 10c0/afda87be3f7e21d10b94f0d1b794abbea3d1c4cd35622f4c3fbe5a46b2980f3797296b0f6f6f2f1ef88d854b6324823f295eb744d0d75e0f9ab6f61b6f74cab5
   languageName: node
   linkType: hard
 

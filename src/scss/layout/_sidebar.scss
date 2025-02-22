@@ -1,0 +1,89 @@
+
+.l-sidebar.navbar {
+  box-shadow: none;
+
+  --nexus-sidebar-menu-item-color: var(--bs-dropdown-color);
+  --nexus-sidebar-nav-item-active-bg: #{$sidebar-nav-item-active-bg};
+  --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-nav-item-active-bg)};
+}
+
+.l-sidebar.navbar[data-bs-theme="dark"] {
+  background-color: $sidebar-dark-bg;
+  --nexus-sidebar-menu-item-color: #{$sidebar-dark-menu-item-color};
+  --nexus-sidebar-nav-item-active-bg: #{$sidebar-dark-nav-item-active-bg};
+  --nexus-sidebar-nav-item-active-color: #{color-contrast($sidebar-dark-nav-item-active-bg)};
+
+  .navbar-nav {
+    .dropdown-menu {
+      --bs-dropdown-link-active-color: #{$body-color-dark};
+      --bs-dropdown-link-hover-color: #{$body-color-dark};
+    }
+  }
+}
+
+.l-sidebar.navbar .navbar-nav {
+  --bs-nav-link-color: var(--nexus-sidebar-menu-item-color);
+
+  padding-left: .75rem;
+  gap: .25rem;
+
+  .nav-item.active::after {
+    border: none;
+  }
+
+  .dropdown-toggle.show::after {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-link-active-color: #{$body-color};
+    --bs-dropdown-link-active-bg: transparent;
+    --bs-dropdown-link-hover-color: #{$body-color};
+    --bs-dropdown-link-hover-bg: transparent;
+    --bs-navbar-active-bg: transparent;
+
+    gap: .25rem;
+    display: block;
+    //transition: display 0, height .3s;
+    //transition-delay: .5s, .3s;
+
+    .dropdown-item {
+
+      //padding-top: .25rem;
+      //padding-bottom: .25rem;
+      color: var(--nexus-sidebar-menu-item-color);
+      display: inline-block;
+      transition: all .3s;
+    }
+
+    .dropdown-item.active {
+      color: var(--bs-dropdown-link-active-color);
+    }
+
+    .dropdown-item:hover {
+      color: var(--bs-dropdown-link-hover-color);
+    }
+  }
+
+  .dropdown-menu.collapse {
+    display: none;
+  }
+
+  .dropdown-menu.collapse.show {
+    display: block;
+  }
+
+  .dropdown-menu:not(.show) {
+    //height: 0;
+    //transition-delay: .5s, .5s, .25s;
+  }
+
+  .dropdown-menu.show {
+
+  }
+
+  .nav-link.active {
+    background: var(--nexus-sidebar-nav-item-active-bg);
+    color: var(--nexus-sidebar-nav-item-active-color);
+  }
+}

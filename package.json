@@ -7,7 +7,8 @@
   "scripts": {
     "build": "gulp",
     "watch": "gulp --watching=1",
-    "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules"
+    "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules",
+    "postinstall": "yarn build install"
   },
   "publishConfig": {
     "registry": "https://github.com/lyrasoft/admin-theme"
@@ -16,7 +17,9 @@
     "@windwalker-io/fusion": "^1.1.6",
     "bootstrap": "^5.3.3",
     "gulp": "^4.0",
-    "sass": "^1.85.0"
+    "ribble": "^1.0.4",
+    "sass": "^1.85.0",
+    "vanilla-ripplejs": "^1.0.6"
   },
   "resolutions": {
     "micromatch": "^4.0.8",

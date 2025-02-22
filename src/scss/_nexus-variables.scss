@@ -3,7 +3,17 @@
 $prefix: "bs-";
 
 // Colors
+//$gray-100: #f8f9fa;
+//$gray-200: #eff2f7;
+//$gray-300: #f6f6f6;
+//$gray-400: #ced4da;
+//$gray-500: #adb5bd;
+//$gray-600: #74788d;
+//$gray-700: #495057;
+//$gray-800: #343a40;
+//$gray-900: #212529;
 
+//$dark: $gray-900;
 
 // Typography
 $font-google: "Roboto";
@@ -23,7 +33,7 @@ $h5-font-size: $font-size-base * 1 !default;
 $h6-font-size: $font-size-base * .875 !default;
 
 // Navbar
-$navbar-brand-font-size: $font-size-lg !default;
+$navbar-brand-font-size: $font-size-lg;
 
 // Cards
 $card-border-width: 0;
@@ -50,7 +60,28 @@ $input-btn-padding-x-sm: .5rem;
 $input-btn-padding-y-lg: .5rem;
 $input-btn-padding-x-lg: 1rem;
 
-$form-label-font-size: $font-size-base !default;
+$form-label-font-size: $font-size-base;
 
 // Pagination
 $pagination-padding-x: .75rem;
+
+// Modal
+$modal-header-padding: 1rem;
+
+@import "../tabler/scss/config";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Fonts
+$font-family-sans-serif: 'Roboto', 'Inter Var', Inter,  "PingFang TC", "Heiti TC", "微軟正黑體", -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+
+// Sidebar
+$sidebar-width: 250px;
+$sidebar-nav-item-active-bg: $primary;
+
+// Sidebar - Dark
+$sidebar-dark-bg: #2a3042;
+$sidebar-dark-nav-item-active-bg: rgba(black, .2);
+$sidebar-dark-menu-item-color: #a6b0cf;
+$sidebar-dark-menu-item-color: #a6b0cf;
+//$sidebar-dark-menu-item-icon-color: #6a7187;

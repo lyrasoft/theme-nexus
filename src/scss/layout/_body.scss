@@ -1,0 +1,7 @@
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body::backdrop {
+  background-color: var(--bs-bg-color);
+}
