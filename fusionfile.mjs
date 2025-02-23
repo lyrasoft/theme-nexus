@@ -14,6 +14,7 @@ export function js() {
       'src/js/',
       {
         tsconfig: path.resolve('tsconfig.json'),
+        minify: 'separate_file'
       }
     )
   )
@@ -30,10 +31,20 @@ export function css() {
       sass: {
         includePaths: [
           'node_modules',
+          './'
         ],
       },
       minify: 'separate_file'
-    })
+    }),
+    sass('src/scss/demo.scss', 'demo/preview/css/demo.css', {
+      sass: {
+        includePaths: [
+          'node_modules',
+          './'
+        ],
+      },
+      minify: 'separate_file'
+    }),
   )
 }
 

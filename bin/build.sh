@@ -1,7 +1,7 @@
 #!/bin/bash
 
 rm -rf tabler
-git clone https://github.com/tabler/tabler.git --depth=1
+./bin/clone.sh
 
 cd tabler
 git pull

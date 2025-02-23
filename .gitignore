@@ -5,5 +5,5 @@
 node_modules
 .scannerwork
 tmp
-tabler
+/tabler
 .idea

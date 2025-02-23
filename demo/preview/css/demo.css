@@ -1,3 +1,20 @@
+/**
+ * Converts a given value to a percentage string.
+ *
+ * @param {Number} $value - The value to be converted to a percentage.
+ * @return {String} - The percentage representation of the value.
+ */
+/**
+ * Generates a transparent version of the given color.
+ *
+ * @param {Color} $color - The base color to be made transparent.
+ * @param {Number} $alpha - The level of transparency, ranging from 0 (fully transparent) to 1 (fully opaque). Default is 1.
+ * @return {Color} - The resulting color with the specified transparency.
+ */
+:root {
+  --nx-header-height: 56px;
+}
+
 pre.highlight,
 .highlight pre {
   max-height: 30rem;
@@ -62,23 +79,33 @@ pre.highlight,
 
 .demo-icon-preview-icon pre {
   margin: 0;
-  user-select: all;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
 }
 
 .demo-dividers > p {
   opacity: 0.2;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .demo-icons-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
   margin: 0 -2px -1px 0;
   list-style: none;
 }
 .demo-icons-list > * {
-  flex: 1 0 4rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 4rem;
+          flex: 1 0 4rem;
 }
 
 .demo-icons-list-wrap {
@@ -86,10 +113,19 @@ pre.highlight,
 }
 
 .demo-icons-list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   aspect-ratio: 1;
   text-align: center;
   padding: 0.5rem;
@@ -107,4 +143,72 @@ pre.highlight,
   text-decoration: none;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlbW8uY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBIiwiZmlsZSI6ImRlbW8uY3NzIiwic291cmNlc0NvbnRlbnQiOlsicHJlLmhpZ2hsaWdodCxcbi5oaWdobGlnaHQgcHJlIHtcbiAgbWF4LWhlaWdodDogMzByZW07XG4gIG1hcmdpbjogMS41cmVtIDA7XG4gIG92ZXJmbG93OiBhdXRvO1xuICBib3JkZXItcmFkaXVzOiB2YXIoLS10YmxyLWJvcmRlci1yYWRpdXMpO1xufVxuXG4uaGlnaGxpZ2h0IHtcbiAgbWFyZ2luOiAwO1xufVxuLmhpZ2hsaWdodCBjb2RlID4gKiB7XG4gIG1hcmdpbjogMCAhaW1wb3J0YW50O1xuICBwYWRkaW5nOiAwICFpbXBvcnRhbnQ7XG59XG4uaGlnaGxpZ2h0IC5jLCAuaGlnaGxpZ2h0IC5jMSB7XG4gIGNvbG9yOiAjYTBhZWMwO1xufVxuLmhpZ2hsaWdodCAubnQsIC5oaWdobGlnaHQgLm5jLCAuaGlnaGxpZ2h0IC5ueCB7XG4gIGNvbG9yOiAjZmY4MzgzO1xufVxuLmhpZ2hsaWdodCAubmEsIC5oaWdobGlnaHQgLnAge1xuICBjb2xvcjogI2ZmZTQ4NDtcbn1cbi5oaWdobGlnaHQgLnMsIC5oaWdobGlnaHQgLmRsLCAuaGlnaGxpZ2h0IC5zMiB7XG4gIGNvbG9yOiAjYjVmNGE1O1xufVxuLmhpZ2hsaWdodCAuayB7XG4gIGNvbG9yOiAjOTNkZGZkO1xufVxuLmhpZ2hsaWdodCAuczEsIC5oaWdobGlnaHQgLm1pIHtcbiAgY29sb3I6ICNkOWE5ZmY7XG59XG5cbi5jYXJkLXNwb25zb3Ige1xuICBiYWNrZ3JvdW5kOiB2YXIoLS10YmxyLXByaW1hcnktbHQpIG5vLXJlcGVhdCBjZW50ZXIvMTAwJSAxMDAlO1xuICBib3JkZXItY29sb3I6IHZhcigtLXRibHItcHJpbWFyeSk7XG4gIG1pbi1oZWlnaHQ6IDMxNnB4O1xufVxuXG4uZHJvcGRvd24tbWVudS1kZW1vIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB3aWR0aDogMTAwJTtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB0b3A6IDA7XG4gIG1hcmdpbi1ib3R0b206IDFyZW0gIWltcG9ydGFudDtcbn1cblxuLmRlbW8taWNvbi1wcmV2aWV3IHtcbiAgcG9zaXRpb246IHN0aWNreTtcbiAgdG9wOiAwO1xufVxuLmRlbW8taWNvbi1wcmV2aWV3IHN2Zyxcbi5kZW1vLWljb24tcHJldmlldyBpIHtcbiAgd2lkdGg6IDE1cmVtO1xuICBoZWlnaHQ6IDE1cmVtO1xuICBmb250LXNpemU6IDE1cmVtO1xuICBzdHJva2Utd2lkdGg6IDEuNTtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGRpc3BsYXk6IGJsb2NrO1xufVxuXG4uZGVtby1pY29uLXByZXZpZXctaWNvbiBwcmUge1xuICBtYXJnaW46IDA7XG4gIHVzZXItc2VsZWN0OiBhbGw7XG59XG5cbi5kZW1vLWRpdmlkZXJzID4gcCB7XG4gIG9wYWNpdHk6IDAuMjtcbiAgdXNlci1zZWxlY3Q6IG5vbmU7XG59XG5cbi5kZW1vLWljb25zLWxpc3Qge1xuICBkaXNwbGF5OiBmbGV4O1xuICBmbGV4LXdyYXA6IHdyYXA7XG4gIHBhZGRpbmc6IDA7XG4gIG1hcmdpbjogMCAtMnB4IC0xcHggMDtcbiAgbGlzdC1zdHlsZTogbm9uZTtcbn1cbi5kZW1vLWljb25zLWxpc3QgPiAqIHtcbiAgZmxleDogMSAwIDRyZW07XG59XG5cbi5kZW1vLWljb25zLWxpc3Qtd3JhcCB7XG4gIG92ZXJmbG93OiBoaWRkZW47XG59XG5cbi5kZW1vLWljb25zLWxpc3QtaXRlbSB7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBhc3BlY3QtcmF0aW86IDE7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgcGFkZGluZzogMC41cmVtO1xuICBib3JkZXItcmlnaHQ6IHZhcigtLXRibHItYm9yZGVyLXdpZHRoKSB2YXIoLS10YmxyLWJvcmRlci1zdHlsZSkgdmFyKC0tdGJsci1ib3JkZXItY29sb3IpO1xuICBib3JkZXItYm90dG9tOiB2YXIoLS10YmxyLWJvcmRlci13aWR0aCkgdmFyKC0tdGJsci1ib3JkZXItc3R5bGUpIHZhcigtLXRibHItYm9yZGVyLWNvbG9yKTtcbiAgY29sb3I6IGluaGVyaXQ7XG4gIGN1cnNvcjogcG9pbnRlcjtcbn1cbi5kZW1vLWljb25zLWxpc3QtaXRlbSAuaWNvbiB7XG4gIHdpZHRoOiAxLjVyZW07XG4gIGhlaWdodDogMS41cmVtO1xuICBmb250LXNpemU6IDEuNXJlbTtcbn1cbi5kZW1vLWljb25zLWxpc3QtaXRlbTpob3ZlciB7XG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcbn1cbiJdfQ== */
+:root {
+  --tblr-primary: var(--bs-primary);
+  --tblr-secondary: var(--bs-secondary);
+  --tblr-success: var(--bs-success);
+  --tblr-info: var(--bs-info);
+  --tblr-warning: var(--bs-warning);
+  --tblr-danger: var(--bs-danger);
+  --tblr-light: var(--bs-light);
+  --tblr-dark: var(--bs-dark);
+  --tblr-muted: var(--bs-muted);
+  --tblr-blue: var(--bs-blue);
+  --tblr-azure: var(--bs-azure);
+  --tblr-indigo: var(--bs-indigo);
+  --tblr-purple: var(--bs-purple);
+  --tblr-pink: var(--bs-pink);
+  --tblr-red: var(--bs-red);
+  --tblr-orange: var(--bs-orange);
+  --tblr-yellow: var(--bs-yellow);
+  --tblr-lime: var(--bs-lime);
+  --tblr-green: var(--bs-green);
+  --tblr-teal: var(--bs-teal);
+  --tblr-cyan: var(--bs-cyan);
+  --tblr-x: var(--bs-x);
+  --tblr-facebook: var(--bs-facebook);
+  --tblr-twitter: var(--bs-twitter);
+  --tblr-linkedin: var(--bs-linkedin);
+  --tblr-google: var(--bs-google);
+  --tblr-youtube: var(--bs-youtube);
+  --tblr-vimeo: var(--bs-vimeo);
+  --tblr-dribbble: var(--bs-dribbble);
+  --tblr-github: var(--bs-github);
+  --tblr-instagram: var(--bs-instagram);
+  --tblr-pinterest: var(--bs-pinterest);
+  --tblr-vk: var(--bs-vk);
+  --tblr-rss: var(--bs-rss);
+  --tblr-flickr: var(--bs-flickr);
+  --tblr-bitbucket: var(--bs-bitbucket);
+  --tblr-tabler: var(--bs-tabler);
+  --tblr-gray-100: var(--bs-gray-100);
+  --tblr-gray-200: var(--bs-gray-200);
+  --tblr-gray-300: var(--bs-gray-300);
+  --tblr-gray-400: var(--bs-gray-400);
+  --tblr-gray-500: var(--bs-gray-500);
+  --tblr-gray-600: var(--bs-gray-600);
+  --tblr-gray-700: var(--bs-gray-700);
+  --tblr-gray-800: var(--bs-gray-800);
+  --tblr-gray-900: var(--bs-gray-900);
+  --tblr-body-bg: var(--bs-body-bg);
+  --tblr-border-color: var(--bs-border-color);
+  --tblr-bg-surface: var(--bs-bg-surface);
+}
+
+.dropdown-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+/*# sourceMappingURL=demo.css.map */

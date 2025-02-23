@@ -44,7 +44,7 @@ export async function install() {
   ]);
 
   // Add below...
-src('vendor/lyrasoft/theme-nexus/').pipe(symlink('theme/nexus'))
+src('vendor/lyrasoft/theme-nexus/').pipe(symlink('theme/admin'))
     .on('end', () => {
         src('theme/nexus/src/js/').pipe(symlink('www/assets/vendor/nexus/'));
     });

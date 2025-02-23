@@ -1,0 +1,37 @@
+@import "nexus-variables";
+@import "tabler/preview/scss/demo.scss";
+
+$colorMaps: (
+  "body-bg",
+  "border-color",
+  "bg-surface"
+);
+
+:root {
+  @each $color, $hex in $theme-colors {
+    --tblr-#{$color}: var(--bs-#{$color});
+  }
+
+  @each $color, $hex in $grays {
+    --tblr-gray-#{$color}: var(--bs-gray-#{$color});
+  }
+
+  @each $color in $colorMaps {
+    --tblr-#{$color}: var(--bs-#{$color});
+  }
+}
+
+.dropdown-toggle {
+  display: flex;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: "";
+  border-top: .3em solid;
+  border-right: .3em solid transparent;
+  border-bottom: 0;
+  border-left: .3em solid transparent;
+}
