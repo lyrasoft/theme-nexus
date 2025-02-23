@@ -44,7 +44,7 @@ export async function install() {
   ]);
 
   // Add below...
-src('vendor/lyrasoft/theme-nexus/').pipe(symlink('theme/admin'))
+src('vendor/lyrasoft/theme-nexus/').pipe(symlink('theme/nexus'))
     .on('end', () => {
         src('theme/nexus/src/js/').pipe(symlink('www/assets/vendor/nexus/'));
     });
@@ -73,6 +73,38 @@ export async function admin() {
         ),
     );
 }
+```
+
+Then run:
+
+```shell
+yarn build install
+yarn build admin
+```
+
+### Add Assets to Middleware
+
+```php
+namespace App\Module\Admin;
+
+class AdminMiddleware extends AbstractLifecycleMiddleware
+{
+    // ...
+    
+    protected function preprocess(ServerRequestInterface $request): void
+    {
+        // ...
+        
+        // Remove bootstrap CSS, bootstrap styles was merged to nexus.css
+        // $this->asset->css('css/admin/bootstrap.min.css');
+
+        // ...
+
+        $this->asset->js('vendor/nexus/libs/ribble/dist/ribble.js');
+        $this->asset->js('vendor/nexus/nexus.js');
+        $this->asset->css('css/admin/nexus.min.css');
+
+        // ...
 ```
 
 ## Sidebar Mode
