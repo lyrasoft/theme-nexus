@@ -231,10 +231,13 @@ body[data-bs-theme=dark] {
       .nav-link {
         text-align: left;
         background-color: var(--nx-sidebar-bg);
-        border-bottom-right-radius: 0;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+      }
+
+      &.dropdown .nav-link {
+        border-bottom-right-radius: 0;
       }
 
       .nav-link > span {

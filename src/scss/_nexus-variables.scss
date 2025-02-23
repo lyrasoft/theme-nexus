@@ -7,14 +7,16 @@ $blue: #4774f4 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #d63384 !default;
-$red: #fa896b !default;
+$red: #e45b37 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffae1f !default;
+$green: #06b560 !default;
 $cyan: #539bff !default;
 
 // Main Colors
 $primary: $blue !default;
 $info: $cyan !default;
+$warning: $yellow;
 
 // Typography
 $font-google: "Roboto";

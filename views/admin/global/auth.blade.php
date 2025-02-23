@@ -29,15 +29,21 @@ use Windwalker\Core\Router\SystemUri;
 @section('superbody')
     <div class="page">
         <div class="container container-tight py-5 mt-5">
-            <div class="text-center mb-4">
-                <img style="height: 45px" src="{{ $asset->path('images/logo-cb-h.svg') }}" alt="LOGO">
-            </div>
-
-            @yield('card-start')
+            @yield('header')
 
             <div class="card card-md">
+                @yield('card-start')
+
                 <div class="card-body">
-                    @section('header')
+                    @section('logo')
+                        <div class="text-center mb-4">
+                            <a href="{{ $uri->root() }}" target="_blank">
+                                <img style="height: 45px" src="{{ $asset->path('images/logo-cb-h.svg') }}" alt="LOGO">
+                            </a>
+                        </div>
+                    @show
+
+                    @section('card-title')
                         <div class="text-center mb-4">
                             <h2 class="h2">
                                 後台管理
@@ -51,9 +57,11 @@ use Windwalker\Core\Router\SystemUri;
 
                     @yield('container', 'Container')
                 </div>
+
+                @yield('card-end')
             </div>
 
-            @yield('card-end')
+            @yield('footer')
         </div>
     </div>
 @stop
