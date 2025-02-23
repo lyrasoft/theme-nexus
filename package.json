@@ -1,17 +1,14 @@
 {
-  "name": "@lyrasoft/skote",
-  "version": "3.2.0",
+  "name": "@lyrasoft/nexus",
+  "private": true,
   "description": "",
-  "author": "Themesbrand",
-  "repository": "git@github.com:lyrasoft/admin-theme.git",
+  "repository": "git@github.com:lyrasoft/theme-nexus.git",
   "scripts": {
     "build": "gulp",
     "watch": "gulp --watching=1",
     "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules",
-    "postinstall": "yarn build install"
-  },
-  "publishConfig": {
-    "registry": "https://github.com/lyrasoft/admin-theme"
+    "postinstall": "yarn build install",
+    "upgrade": "yarn up '**' -R"
   },
   "devDependencies": {
     "@windwalker-io/fusion": "^1.1.6",

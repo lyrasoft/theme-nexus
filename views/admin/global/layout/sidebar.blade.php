@@ -41,7 +41,7 @@ use Windwalker\Core\Router\SystemUri;
         {{-- LOGO --}}
         <div class="navbar-brand" style="height: var(--nx-header-height)">
             {{-- Dark Mode --}}
-            <div class="d-none d-dark-block">
+            <div class="d-light-none d-dark-block">
                 <a href="{{ $nav->to('home') }}">
                     <img class="navbar-brand-image" src="{{ $asset->path('images/logo-cw-h.svg') }}"
                         alt="LOGO" style="width: auto; height: 30px;">
@@ -51,7 +51,7 @@ use Windwalker\Core\Router\SystemUri;
             </div>
 
             {{-- Light Mode --}}
-            <div class="d-none d-light-block">
+            <div class="d-dark-none d-light-block">
                 <a href="{{ $nav->to('home') }}">
                     <img class="navbar-brand-image" src="{{ $asset->path('images/logo-cb-h.svg') }}"
                         alt="LOGO" style="width: auto; height: 35px;">

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Lyrasoft\Theme\Nexus;
 
+use Windwalker\Core\Html\HtmlFrame;
 use Windwalker\Core\Package\AbstractPackage;
 use Windwalker\Core\Package\PackageInstaller;
 
@@ -12,32 +13,21 @@ use Windwalker\Core\Package\PackageInstaller;
  */
 class NexusPackage extends AbstractPackage
 {
+    public function __construct(protected HtmlFrame $htmlFrame)
+    {
+    }
+
     public function install(PackageInstaller $installer): void
     {
         $installer->installModules(
             [
-                static::path('src/assets/scss/_variables.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/bootstrap.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/app.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/icons.scss') => '@resources/assets/scss/admin/',
+                static::path('src/scss/_nexus-variables.scss') => '@resources/assets/scss/admin/',
+                static::path('src/scss/nexus.scss') => '@resources/assets/scss/admin/',
             ],
             [
-                '"custom/' => '"./vendor/lyrasoft/theme-nexus/src/assets/scss/custom/'
+                '"./' => '"vendor/lyrasoft/theme-nexus/src/scss/'
             ],
-            ['nexus']
-        );
-
-        $installer->installModules(
-            [
-                static::path('src/assets/scss/_variables-dark.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/bootstrap-dark.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/app-dark.scss') => '@resources/assets/scss/admin/',
-                static::path('src/assets/scss/icons.scss') => '@resources/assets/scss/admin/',
-            ],
-            [
-                '"custom/' => '"./vendor/lyrasoft/theme-nexus/src/assets/scss/custom/'
-            ],
-            ['nexus_dark']
+            ['scss']
         );
 
         $installer->installModules(
@@ -45,7 +35,7 @@ class NexusPackage extends AbstractPackage
                 static::path('views/admin/global/**/*') => '@views/admin/global/',
             ],
             [],
-            ['nexus_views']
+            ['views']
         );
     }
 }

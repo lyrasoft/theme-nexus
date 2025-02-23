@@ -14,9 +14,6 @@ export function js() {
       'src/js/',
       {
         tsconfig: path.resolve('tsconfig.json'),
-        ts: {
-          module: 'system'
-        }
       }
     )
   )
@@ -29,10 +26,10 @@ export function css() {
   ]);
 
   return wait(
-    sass('src/scss/main.scss', 'demo/dist/css/tabler.css', {
+    sass('src/scss/nexus.scss', 'demo/dist/css/tabler.css', {
       sass: {
         includePaths: [
-          'node_modules'
+          'node_modules',
         ],
       },
       minify: 'separate_file'

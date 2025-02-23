@@ -77,7 +77,7 @@ $modal-header-padding: 1rem;
 $table-th-padding-x: .75rem;
 $table-th-padding-y: 0.75rem;
 
-@import "../tabler/scss/config";
+@import "src/tabler/scss/config";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
 
@@ -94,7 +94,6 @@ $sidebar-dark-bg: #2a3042;
 $sidebar-dark-nav-item-active-bg: shade-color(#2a3042, 15%);
 $sidebar-dark-menu-item-color: #a6b0cf;
 $sidebar-dark-menu-item-color: #a6b0cf;
-//$sidebar-dark-menu-item-icon-color: #6a7187;
 
 :root {
   --nx-header-height: #{$header-height};
