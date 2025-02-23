@@ -5,3 +5,7 @@ body {
 body::backdrop {
   background-color: var(--bs-bg-color);
 }
+
+.page-wrapper {
+  transition: all .3s;
+}

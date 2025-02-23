@@ -3,17 +3,18 @@
 $prefix: "bs-";
 
 // Colors
-//$gray-100: #f8f9fa;
-//$gray-200: #eff2f7;
-//$gray-300: #f6f6f6;
-//$gray-400: #ced4da;
-//$gray-500: #adb5bd;
-//$gray-600: #74788d;
-//$gray-700: #495057;
-//$gray-800: #343a40;
-//$gray-900: #212529;
+$blue: #4774f4 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #fa896b !default;
+$orange: #fd7e14 !default;
+$yellow: #ffae1f !default;
+$cyan: #539bff !default;
 
-//$dark: $gray-900;
+// Main Colors
+$primary: $blue !default;
+$info: $cyan !default;
 
 // Typography
 $font-google: "Roboto";
@@ -31,6 +32,9 @@ $h3-font-size: $font-size-base * 1.25 !default;
 $h4-font-size: $font-size-base * 1.15 !default;
 $h5-font-size: $font-size-base * 1 !default;
 $h6-font-size: $font-size-base * .875 !default;
+
+// Header
+$header-height: 56px;
 
 // Navbar
 $navbar-brand-font-size: $font-size-lg;
@@ -68,6 +72,11 @@ $pagination-padding-x: .75rem;
 // Modal
 $modal-header-padding: 1rem;
 
+// Tables
+//$table-th-border-color: var(--#{$prefix}border-color-translucent) !default;
+$table-th-padding-x: .75rem;
+$table-th-padding-y: 0.75rem;
+
 @import "../tabler/scss/config";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/variables-dark";
@@ -82,8 +91,11 @@ $sidebar-nav-item-active-bg: $primary;
 
 // Sidebar - Dark
 $sidebar-dark-bg: #2a3042;
-$sidebar-dark-nav-item-active-bg: rgba(black, .2);
+$sidebar-dark-nav-item-active-bg: shade-color(#2a3042, 15%);
 $sidebar-dark-menu-item-color: #a6b0cf;
 $sidebar-dark-menu-item-color: #a6b0cf;
 //$sidebar-dark-menu-item-icon-color: #6a7187;
 
+:root {
+  --nx-header-height: #{$header-height};
+}

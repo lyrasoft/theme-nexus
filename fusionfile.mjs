@@ -1,7 +1,26 @@
 
-import { watch, sass, wait, copy } from '@windwalker-io/fusion';
+import { watch, sass, wait, copy, ts } from '@windwalker-io/fusion';
 import fs from 'fs';
 import path from 'path';
+
+export function js() {
+  watch([
+    'src/ts/**/*.ts',
+  ]);
+
+  return wait(
+    ts(
+      'src/ts/*.ts',
+      'src/js/',
+      {
+        tsconfig: path.resolve('tsconfig.json'),
+        ts: {
+          module: 'system'
+        }
+      }
+    )
+  )
+}
 
 export function css() {
   watch([

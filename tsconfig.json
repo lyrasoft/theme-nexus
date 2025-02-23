@@ -1,0 +1,28 @@
+{
+    "include": [
+        "./src/ts/**/*"
+    ],
+    "exclude": [
+        "node_modules/**/*"
+    ],
+    "types": ["reflect-metadata"],
+    "compilerOptions": {
+        "allowJs": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noEmit": false,
+        "strict": true,
+        "module": "system",
+        "moduleResolution": "node",
+        "target": "es2020",
+        "skipLibCheck": true,
+        "noImplicitThis": true,
+        "strict": true,
+        "useDefineForClassFields": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            //
+        }
+    }
+}
