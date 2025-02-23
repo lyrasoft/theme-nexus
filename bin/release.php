@@ -85,7 +85,11 @@ HELP;
                 break;
 
             default:
-                return $targetVersion . '-' . $suffix;
+                if ($suffix) {
+                    $targetVersion .= '-' . $suffix;
+                }
+
+                return $targetVersion;
         }
 
         $currentVersion = $major . '.' . $minor . '.' . $patch;
