@@ -1,5 +1,5 @@
 
-import { watch, sass, wait, copy, ts } from '@windwalker-io/fusion';
+import { watch, sass, wait, copy, ts, parallel } from '@windwalker-io/fusion';
 import fs from 'fs';
 import path from 'path';
 
@@ -79,3 +79,5 @@ function deleteExists(dir) {
 
   fs.rmdirSync(dir);
 }
+
+export default parallel(css, js);

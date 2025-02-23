@@ -1,3 +1,9 @@
+/*!
+ * Tabler Vendors v1.0.0 (https://tabler.io)
+ * Copyright 2018-2025 The Tabler Authors
+ * Copyright 2018-2025 codecalm.net Paweł Kuna
+ * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
+ */
 /**
  * Converts a given value to a percentage string.
  *
@@ -231,7 +237,7 @@
   background: #182433;
   font-family: inherit;
   font-size: 0.75rem;
-  box-shadow: var(--tblr-shadow-card);
+  box-shadow: var(--tblr-box-shadow-card);
 }
 
 .jvm-series-container .jvm-legend .jvm-legend-title {
@@ -265,7 +271,7 @@
   width: 1.5rem;
   height: 1.5rem;
   font-size: 1rem;
-  box-shadow: var(--tblr-shadow-card);
+  box-shadow: var(--tblr-box-shadow-card);
 }
 .jvm-zoom-btn.jvm-zoomout {
   top: 2.5rem;

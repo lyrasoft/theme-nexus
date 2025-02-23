@@ -5,6 +5,7 @@
   "repository": "git@github.com:lyrasoft/theme-nexus.git",
   "scripts": {
     "build": "gulp",
+    "build:prod": "cross-env NODE_ENV=production gulp",
     "watch": "gulp --watching=1",
     "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules",
     "postinstall": "yarn build install",
@@ -14,6 +15,7 @@
     "@windwalker-io/fusion": "^1.1.6",
     "@windwalker-io/unicorn": "^1.1.23",
     "bootstrap": "^5.3.3",
+    "cross-env": "^7.0.3",
     "gulp": "^4.0",
     "ribble": "^1.0.4",
     "sass": "^1.85.0",
