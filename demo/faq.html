@@ -14,17 +14,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    <link href="./dist/css/tabler.min.css?1740298835" rel="stylesheet" />
+    <link href="./dist/css/tabler.min.css?1740624081" rel="stylesheet" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PLUGINS STYLES -->
-    <link href="./dist/css/tabler-flags.min.css?1740298835" rel="stylesheet" />
-    <link href="./dist/css/tabler-socials.min.css?1740298835" rel="stylesheet" />
-    <link href="./dist/css/tabler-payments.min.css?1740298835" rel="stylesheet" />
-    <link href="./dist/css/tabler-vendors.min.css?1740298835" rel="stylesheet" />
-    <link href="./dist/css/tabler-marketing.min.css?1740298835" rel="stylesheet" />
+    <link href="./dist/css/tabler-flags.min.css?1740624081" rel="stylesheet" />
+    <link href="./dist/css/tabler-socials.min.css?1740624081" rel="stylesheet" />
+    <link href="./dist/css/tabler-payments.min.css?1740624081" rel="stylesheet" />
+    <link href="./dist/css/tabler-vendors.min.css?1740624081" rel="stylesheet" />
+    <link href="./dist/css/tabler-marketing.min.css?1740624081" rel="stylesheet" />
     <!-- END PLUGINS STYLES -->
     <!-- BEGIN DEMO STYLES -->
-    <link href="./preview/css/demo.min.css?1740298835" rel="stylesheet" />
+    <link href="./preview/css/demo.min.css?1740624081" rel="stylesheet" />
     <!-- END DEMO STYLES -->
     <!-- BEGIN CUSTOM FONT -->
     <style>
@@ -34,7 +34,7 @@
   </head>
   <body>
     <!-- BEGIN DEMO THEME SCRIPT -->
-    <script src="./preview/js/demo-theme.min.js?1740298835"></script>
+    <script src="./preview/js/demo-theme.min.js?1740624081"></script>
     <!-- END DEMO THEME SCRIPT -->
     <div class="page">
       <!--  BEGIN SIDEBAR  -->
@@ -376,7 +376,10 @@
                 <div class="dropdown-menu">
                   <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
-                      <a class="dropdown-item" href="./accordion.html"> Accordion </a>
+                      <a class="dropdown-item" href="./accordion.html">
+                        Accordion
+                        <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
+                      </a>
                       <a class="dropdown-item" href="./alerts.html"> Alerts </a>
                       <div class="dropend">
                         <a
@@ -1034,7 +1037,10 @@
                   <div class="dropdown-menu">
                     <div class="dropdown-menu-columns">
                       <div class="dropdown-menu-column">
-                        <a class="dropdown-item" href="./accordion.html"> Accordion </a>
+                        <a class="dropdown-item" href="./accordion.html">
+                          Accordion
+                          <span class="badge badge-sm bg-green-lt text-uppercase ms-auto">New</span>
+                        </a>
                         <a class="dropdown-item" href="./alerts.html"> Alerts </a>
                         <div class="dropend">
                           <a
@@ -1445,9 +1451,9 @@
                     <h2 class="mb-3">1. Introduction</h2>
                     <div id="faq-1" class="accordion" role="tablist" aria-multiselectable="true">
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq-1-1">Welcome to our service!</button>
-                        </div>
+                        <button class="accordion-header" data-bs-toggle="collapse" data-bs-target="#faq-1-1" role="tab">
+                          <h4 class="accordion-header-text">Welcome to our service!</h4>
+                        </button>
                         <div id="faq-1-1" class="accordion-collapse collapse show" role="tabpanel" data-bs-parent="#faq-1">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1464,9 +1470,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1-2">Who are we?</button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1-2" role="tab">
+                          <h4 class="accordion-header-text">Who are we?</h4>
+                        </button>
                         <div id="faq-1-2" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1483,9 +1489,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1-3">What are our values?</button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-1-3" role="tab">
+                          <h4 class="accordion-header-text">What are our values?</h4>
+                        </button>
                         <div id="faq-1-3" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-1">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1507,9 +1513,9 @@
                     <h2 class="mb-3">2. Functionality</h2>
                     <div id="faq-2" class="accordion" role="tablist" aria-multiselectable="true">
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq-2-1">What are the key features?</button>
-                        </div>
+                        <button class="accordion-header" data-bs-toggle="collapse" data-bs-target="#faq-2-1" role="tab">
+                          <h4 class="accordion-header-text">What are the key features?</h4>
+                        </button>
                         <div id="faq-2-1" class="accordion-collapse collapse show" role="tabpanel" data-bs-parent="#faq-2">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1526,11 +1532,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-2">
-                            Does your App support mobile devices?
-                          </button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-2" role="tab">
+                          <h4 class="accordion-header-text">Does your App support mobile devices?</h4>
+                        </button>
                         <div id="faq-2-2" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-2">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1547,11 +1551,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-3">
-                            Why should I choose your service?
-                          </button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-3" role="tab">
+                          <h4 class="accordion-header-text">Why should I choose your service?</h4>
+                        </button>
                         <div id="faq-2-3" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-2">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1568,9 +1570,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-4">Is my data secure?</button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-2-4" role="tab">
+                          <h4 class="accordion-header-text">Is my data secure?</h4>
+                        </button>
                         <div id="faq-2-4" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-2">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1592,9 +1594,9 @@
                     <h2 class="mb-3">3. Payments</h2>
                     <div id="faq-3" class="accordion" role="tablist" aria-multiselectable="true">
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq-3-1">Is there any free plan?</button>
-                        </div>
+                        <button class="accordion-header" data-bs-toggle="collapse" data-bs-target="#faq-3-1" role="tab">
+                          <h4 class="accordion-header-text">Is there any free plan?</h4>
+                        </button>
                         <div id="faq-3-1" class="accordion-collapse collapse show" role="tabpanel" data-bs-parent="#faq-3">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1611,11 +1613,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3-2">
-                            What are the available payment options?
-                          </button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3-2" role="tab">
+                          <h4 class="accordion-header-text">What are the available payment options?</h4>
+                        </button>
                         <div id="faq-3-2" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-3">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1632,9 +1632,9 @@
                         </div>
                       </div>
                       <div class="accordion-item">
-                        <div class="accordion-header" role="tab">
-                          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3-3">Can I get a refund?</button>
-                        </div>
+                        <button class="accordion-header collapsed" data-bs-toggle="collapse" data-bs-target="#faq-3-3" role="tab">
+                          <h4 class="accordion-header-text">Can I get a refund?</h4>
+                        </button>
                         <div id="faq-3-3" class="accordion-collapse collapse" role="tabpanel" data-bs-parent="#faq-3">
                           <div class="accordion-body pt-0">
                             <div>
@@ -1711,10 +1711,10 @@
     <!-- BEGIN PAGE LEVEL SCRIPTS -->
     <!-- END PAGE LEVEL SCRIPTS -->
     <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="./dist/js/tabler.min.js?1740298835" defer></script>
+    <script src="./dist/js/tabler.min.js?1740624081" defer></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
     <!-- BEGIN DEMO SCRIPTS -->
-    <script src="./preview/js/demo.min.js?1740298835" defer></script>
+    <script src="./preview/js/demo.min.js?1740624081" defer></script>
     <!-- END DEMO SCRIPTS -->
   </body>
 </html>
