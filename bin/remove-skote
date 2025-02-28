@@ -1,0 +1,62 @@
+#!/usr/bin/env php
+<?php
+
+// phpcs:disable
+
+use Asika\SimpleConsole\Console;
+
+include_once __DIR__ . '/Console.php';
+
+class RemoveSkote extends Console
+{
+    protected function doExecute(): int
+    {
+        $cwd = getcwd();
+
+        $this->exec('composer remove lyrasoft/theme-skote');
+
+        $composerFile = $cwd . '/composer.json';
+        $json = json_decode(file_get_contents($composerFile), false, 512, JSON_THROW_ON_ERROR);
+
+        if (($json->repositories ?? null) && is_array($json->repositories)) {
+            foreach ($json->repositories as $i => $repo) {
+                if ($repo->url ?? '' && str_contains($repo->url, 'theme-skote')) {
+                    unset($json->repositories[$i]);
+                }
+            }
+
+            if ($json->repositories === []) {
+                unset($json->repositories);
+            }
+
+            file_put_contents(
+                $composerFile,
+                json_encode($json, JSON_THROW_ON_ERROR | JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES)
+            );
+
+            $this->out('[Remove] Remove repositories from composer.json');
+        }
+
+        $scssFolder = $cwd . '/resources/assets/scss/admin';
+
+        $this->removeFile($scssFolder . '/_variables.scss');
+        $this->removeFile($scssFolder . '/app.scss');
+        $this->removeFile($scssFolder . '/bootstrap.scss');
+        $this->removeFile($scssFolder . '/icons.scss');
+
+        $this->out();
+        $this->out('Congrats, you successfully remove lyrasoft/theme-skote.');
+        $this->out('The scripts cannot remove scripts from `./fusionfile.mjs`, you must manually do it..');
+
+        return 0;
+    }
+
+    protected function removeFile(string $path): bool
+    {
+        $this->out('[Remove] ' . $path);
+
+        return @unlink($path);
+    }
+}
+
+exit((new RemoveSkote())->execute());

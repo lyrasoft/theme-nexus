@@ -18,30 +18,17 @@
 
 ## Installation
 
-> ### Remove old Skote Theme
-> ```shell
-> composer remove lyrasoft/theme-skote
-> ```
-> And must remove the `repositories` at `composer.json`
-> ```json
->     "repositories": [
->         {
->             "type": "git",
->             "url": "git@github.com:lyrasoft/theme-skote.git"
->         }
->     ]
-> ```
-> Then remove these 4 files:
-> ![screenshot 2025-02-28 下午2 25 42](https://github.com/user-attachments/assets/3d199a74-261a-449e-82a2-a5074a500b55)
-
-
 ### Install via Composer
 
 ```shell
 composer require lyrasoft/theme-nexus
 ```
 
-Remember to add SSH key to your computer.
+### Remove Old Skote Theme
+
+```shell
+php ./vendor/lyrasoft/theme-nexus/bin/remove-skote
+```
 
 ### Project
 
@@ -191,3 +178,41 @@ $sidebar-dark-menu-item-color: tint-color($primary, 70%);
 ```
 
 ![Image](https://github.com/user-attachments/assets/4e00158b-8019-4d5b-beb1-8a4faca63215)
+
+## Manually Remove old Skote Theme
+```shell
+composer remove lyrasoft/theme-skote
+```
+And must remove the `repositories` at `composer.json`
+```json
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:lyrasoft/theme-skote.git"
+        }
+    ]
+```
+
+Remove scripts from `fusionfile.mjs`
+
+```js
+// Remove this
+export async function admin() {
+    // ...
+}
+
+export async function install() {
+    // ...
+
+    // Remove this
+    src('vendor/lyrasoft/theme-skote/').pipe(symlink('theme/admin'))
+        .on('end', () => {
+            src('theme/admin/dist/assets/libs/').pipe(symlink('www/assets/vendor/admin/'));
+            src('theme/admin/dist/assets/fonts/').pipe(symlink('www/assets/css/fonts/'));
+        });
+}
+```
+
+Then remove these 4 files:
+![screenshot 2025-02-28 下午2 25 42](https://github.com/user-attachments/assets/3d199a74-261a-449e-82a2-a5074a500b55)
+
