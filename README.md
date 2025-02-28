@@ -31,6 +31,9 @@
 >         }
 >     ]
 > ```
+> Then remove these 4 files:
+> ![screenshot 2025-02-28 下午2 25 42](https://github.com/user-attachments/assets/3d199a74-261a-449e-82a2-a5074a500b55)
+
 
 ### Install via Composer
 
