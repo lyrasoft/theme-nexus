@@ -28671,6 +28671,8 @@ body::backdrop {
   --bs-navbar-active-bg: transparent;
   gap: 0.25rem;
   display: block;
+  -webkit-animation-name: none;
+          animation-name: none;
 }
 .l-sidebar.navbar .navbar-nav .dropdown-menu .dropdown-item {
   color: var(--nx-sidebar-sub-item-color);

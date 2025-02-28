@@ -27,5 +27,6 @@ mkdir src/tabler
 cp -r tabler/core/js src/tabler
 cp -r tabler/core/img src/tabler
 cp -r tabler/core/scss src/tabler
+cp -r tabler/preview/scss src/scss/preview
 
 #rm -rf tabler
