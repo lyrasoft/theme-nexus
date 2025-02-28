@@ -1,25 +1,38 @@
 # Nexus Theme - LYRASOFT
 
+![cover](https://github.com/user-attachments/assets/aff7835c-37f4-4f58-94bc-b7eb6dd7c6a7)
+
+<!-- TOC -->
+* [Nexus Theme - LYRASOFT](#nexus-theme---lyrasoft)
+  * [Installation](#installation)
+    * [Install via Composer](#install-via-composer)
+    * [Project](#project)
+  * [fusionfile.mjs](#fusionfilemjs)
+    * [Add Assets to Middleware](#add-assets-to-middleware)
+  * [Sidebar Mode](#sidebar-mode)
+    * [Default](#default)
+    * [Full Dark Sidebar](#full-dark-sidebar)
+    * [White Sidebar](#white-sidebar)
+    * [Colorful Sidebar](#colorful-sidebar)
+<!-- TOC -->
+
 ## Installation
 
-### Remove old Skote Theme
+> ### Remove old Skote Theme
+> ```shell
+> composer remove lyrasoft/theme-skote
+> ```
+> And must remove the `repositories` at `composer.json`
+> ```json
+>     "repositories": [
+>         {
+>             "type": "git",
+>             "url": "git@github.com:lyrasoft/theme-skote.git"
+>         }
+>     ]
+> ```
 
-```shell
-composer remove lyrasoft/theme-skote
-```
-
-And must remove the `repositories` at `composer.json`
-
-```json
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:lyrasoft/theme-skote.git"
-        }
-    ]
-```
-
-### Composer
+### Install via Composer
 
 ```shell
 composer require lyrasoft/theme-nexus
