@@ -2,6 +2,23 @@
 
 ## Installation
 
+### Remove old Skote Theme
+
+```shell
+composer remove lyrasoft/theme-skote
+```
+
+And must remove the `repositories` at `composer.json`
+
+```json
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:lyrasoft/theme-skote.git"
+        }
+    ]
+```
+
 ### Composer
 
 ```shell
