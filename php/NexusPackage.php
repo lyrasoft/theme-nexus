@@ -13,10 +13,6 @@ use Windwalker\Core\Package\PackageInstaller;
  */
 class NexusPackage extends AbstractPackage
 {
-    public function __construct(protected HtmlFrame $htmlFrame)
-    {
-    }
-
     public function install(PackageInstaller $installer): void
     {
         $installer->installModules(
