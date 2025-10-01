@@ -1,3 +1,9 @@
+html {
+  // Fix https://github.com/tabler/tabler/issues/2271
+  // Remove after Tabler fix this
+  margin-left: 0 !important;
+}
+
 body {
   -webkit-font-smoothing: subpixel-antialiased;
 }

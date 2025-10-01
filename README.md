@@ -54,52 +54,85 @@ The scss files will copy to `resources/assets/scss/admin/`, you can modify `_nex
 
 And the view files will install to `views/admin/global/`.
 
-## fusionfile.mjs
+## fusionfile.ts
 
 ```js
-export async function install() {
-  installVendors([
-    '@fortawesome/fontawesome-pro',
-      // ...
-  ]);
-
-  // Add below...
-src('vendor/lyrasoft/theme-nexus/').pipe(symlink('theme/nexus'))
-    .on('end', () => {
-        src('theme/nexus/src/js/').pipe(symlink('www/assets/vendor/nexus/'));
-    });
+export function install() {
+    return [
+        installVendors(
+            [
+                ...
+            ],
+        ),
+        // Add below lines
+        callbackAfterBuild(async () => {
+            await symlink('vendor/lyrasoft/theme-nexus/', 'theme/nexus/');
+            await symlink('theme/nexus/src/js/', 'www/assets/vendor/nexus/');
+        })
+    ];
 }
 ```
 
 ```js
-export async function admin() {
-    fusion.watch([
-        'vendor/lyrasoft/theme-nexus/src/**/*',
-        'resources/assets/scss/admin/**/*.scss'
-    ]);
-    
-    return wait(
-        sass(
-            'resources/assets/scss/admin/nexus.scss',
-            'www/assets/css/admin/nexus.css',
-            {
-                sass: {
-                    includePaths: [
-                        'node_modules',
-                        'vendor/lyrasoft/theme-nexus'
-                    ]
-                }
-            }
-        ),
-    );
+export function css() {
+    // ...
+    return [
+        cssModulize('resources/assets/scss/front/main.scss', 'css/front/main.css')
+            // ...
+        cssModulize('resources/assets/scss/admin/main.scss', 'css/admin/main.css')
+            // ...
+        
+        // Add below lines
+        
+        //Nexus
+        fusion.css('resources/assets/scss/admin/nexus.scss', 'css/admin/nexus.css'),
+    ];
 }
+```
+
+## vite.config.ts
+
+```ts
+export default defineConfig(({ command, mode }) => {
+    return {
+        // ...
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    loadPaths: [
+                        resolve('./vendor/lyrasoft/theme-nexus/'), // <-- Add this line
+                    ],
+                },
+            },
+        },
+    };
+});
+```
+
+## admin `main.ts`
+
+```ts
+// ...
+import { useNexusTheme } from '~theme/nexus/src/ts/nexus';
+
+// ...
+
+useUnicorn();
+// Must after useUnicorn()
+
+useNexusTheme();
+
+// ...
 ```
 
 Then run:
 
 ```shell
-yarn build install
-yarn build admin
+yarn build -- install
+
+yarn build
+# OR
+yarn dev
 ```
 
 ### Add Assets to Middleware
@@ -121,8 +154,7 @@ class AdminMiddleware extends AbstractLifecycleMiddleware
         // ...
 
         $this->asset->js('vendor/nexus/libs/ribble/dist/ribble.js');
-        $this->asset->js('vendor/nexus/nexus.js');
-        $this->asset->css('css/admin/nexus.min.css');
+        $this->asset->css('@vite/scss/admin/nexus.scss');
 
         // ...
 ```

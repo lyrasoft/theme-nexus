@@ -21,7 +21,7 @@ class NexusPackage extends AbstractPackage
                 static::path('src/scss/nexus.scss') => '@resources/assets/scss/admin/',
             ],
             [
-                '"./' => '"vendor/lyrasoft/theme-nexus/src/scss/'
+                '"./' => '"src/scss/'
             ],
             ['scss']
         );
