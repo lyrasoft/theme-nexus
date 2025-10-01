@@ -2,7 +2,7 @@
 Markdown
  */
 .markdown {
-  line-height: $line-height-lg;
+  line-height: $line-height-xl;
 
   > :first-child {
     margin-top: 0;
@@ -24,10 +24,15 @@ Markdown
     h1, h2, h3, h4, h5, h6 {
       font-weight: var(--#{$prefix}font-weight-bold);
     }
+
+    h2, h3, h4, h5, h6 {
+      margin-top: 2.5rem;
+    }
   }
 
   > table {
-    @extend .table, .table-bordered;
+    font-size: var(--#{$prefix}body-font-size);
+    @extend .table, .table-bordered, .table-sm;
   }
 
   > blockquote {
@@ -39,5 +44,10 @@ Markdown
   > img,
   > p > img {
     border-radius: var(--#{$prefix}border-radius);
+    border: 1px solid var(--#{$prefix}border-color);
+  }
+
+  pre {
+    max-height: 20rem;
   }
 }

@@ -1,9 +1,3 @@
-/*!
- * Tabler Flags v1.0.0 (https://tabler.io)
- * Copyright 2018-2025 The Tabler Authors
- * Copyright 2018-2025 codecalm.net Paweł Kuna
- * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
- */
 /**
  * Converts a given value to a percentage string.
  *
@@ -23,7 +17,7 @@
   height: 2.5rem;
   aspect-ratio: 1.33333;
   background: no-repeat center/cover;
-  box-shadow: var(--tblr-box-shadow-border);
+  box-shadow: var(--tblr-shadow-border);
   border-radius: var(--tblr-border-radius);
   vertical-align: bottom;
 }

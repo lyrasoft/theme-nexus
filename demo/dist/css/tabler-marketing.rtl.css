@@ -1,9 +1,3 @@
-/*!
- * Tabler Marketing v1.0.0 (https://tabler.io)
- * Copyright 2018-2025 The Tabler Authors
- * Copyright 2018-2025 codecalm.net Paweł Kuna
- * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
- */
 /**
  * Converts a given value to a percentage string.
  *
@@ -62,7 +56,7 @@
 
 .hero-subheader {
   font-size: 0.75rem;
-  font-weight: var(--tblr-font-weight-bold);
+  font-weight: var(--tblr-font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   line-height: 1rem;
@@ -268,7 +262,7 @@
   display: flex;
   flex-direction: column;
   background: var(--tblr-bg-surface);
-  border: 1px solid #dce1e7;
+  border: 1px solid #e5e7eb;
   padding: 2rem;
   margin: 0 0 1rem;
   position: relative;
@@ -290,7 +284,7 @@
 }
 .pricing-card.featured {
   z-index: 1;
-  border: 2px solid #066fd1;
+  border: 2px solid var(--tblr-primary);
   order: -1;
 }
 @media (min-width: 768px) {
@@ -345,7 +339,7 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
-  color: #6c7a91;
+  color: #6b7280;
   align-self: center;
   margin-right: 0.5rem;
 }
@@ -379,7 +373,7 @@
 
 .shape-xxs {
   --tblr-shape-size: 1rem;
-  --tblr-shape-icon-size: 0.75rem;
+  --tblr-shape-icon-size: 0.5rem;
 }
 
 .shape-xs {

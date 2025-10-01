@@ -12,9 +12,10 @@
     "upgrade": "yarn up '**' -R"
   },
   "devDependencies": {
+    "@types/bootstrap": "^5.2.10",
     "@windwalker-io/fusion": "^1.1.6",
     "@windwalker-io/unicorn": "^1.1.23",
-    "bootstrap": "^5.3.3",
+    "bootstrap": "^5.3.8",
     "cross-env": "^7.0.3",
     "gulp": "^4.0",
     "ribble": "^1.0.4",

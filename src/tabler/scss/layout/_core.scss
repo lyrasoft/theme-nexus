@@ -1,3 +1,5 @@
+@use "sass:map";
+  
 // stylelint-disable property-no-vendor-prefix
 body {
   letter-spacing: $body-letter-spacing;
@@ -7,6 +9,7 @@ body {
   position: relative;
   min-height: 100%;
   height: 100%;
+  padding: 0;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,7 +37,7 @@ body {
 //
 .layout-boxed {
   --#{$prefix}theme-boxed-border-radius: 0;
-  --#{$prefix}theme-boxed-width: #{map-get($container-max-widths, xxl)};
+  --#{$prefix}theme-boxed-width: #{map.get($container-max-widths, xxl)};
 
   @include media-breakpoint-up(md) {
     background: $dark linear-gradient(to right, rgba(#fff, .1), transparent) fixed;

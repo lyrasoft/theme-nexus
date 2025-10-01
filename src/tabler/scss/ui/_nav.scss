@@ -1,3 +1,7 @@
+.nav {
+  --#{$prefix}nav-link-hover-bg: #{color-transparent(var(--#{$prefix}nav-link-color), 0.04)};
+}
+
 .nav-vertical {
   &,
   .nav {
@@ -13,11 +17,12 @@
 
   .nav-link.active,
   .nav-item.show .nav-link {
-    font-weight: var(--#{$prefix}font-weight-medium);
+    font-weight: var(--#{$prefix}font-weight-bold);
+    color: var(--#{$prefix}nav-link-active-color);
   }
 
   &.nav-pills {
-    margin: 0 (-$nav-link-padding-x);
+    margin: 0 calc(-1 * $nav-link-padding-x);
   }
 }
 
@@ -39,6 +44,10 @@
     margin: 0 0 calc(-1 * #{$nav-bordered-border-width});
     border: 0;
     border-bottom: $nav-bordered-link-active-border-width var(--#{$prefix}border-style) transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   .nav-link.active,
@@ -46,13 +55,18 @@
     color: $nav-bordered-link-active-color;
     border-color: $nav-bordered-link-active-border-color;
   }
+}
 
+.nav-underline {
+  .nav-link {
+    border-radius: 0;
+  }
 }
 
 .nav-link {
   display: flex;
-  @include transition(color $transition-time, background-color $transition-time);
   align-items: center;
+  @include transition(color $transition-time, background-color $transition-time);
 
   &:hover,
   &:focus {

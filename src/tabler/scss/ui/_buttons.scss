@@ -1,16 +1,17 @@
 @use "sass:color";
+@use "sass:map";
 
 //
 // Button
 //
 .btn {
   --#{$prefix}btn-icon-size: #{$input-btn-icon-size};
+  --#{$prefix}btn-icon-color: inherit;
   --#{$prefix}btn-bg: var(--#{$prefix}bg-surface);
   --#{$prefix}btn-color: var(--#{$prefix}body-color);
   --#{$prefix}btn-border-color: #{$btn-border-color};
   --#{$prefix}btn-hover-bg: var(--#{$prefix}btn-bg);
   --#{$prefix}btn-hover-border-color: var(--#{$prefix}border-active-color);
-  --#{$prefix}btn-box-shadow: var(--#{$prefix}box-shadow-input);
   --#{$prefix}btn-active-color: #{$active-color};
   --#{$prefix}btn-active-bg: #{$active-bg};
   --#{$prefix}btn-active-border-color: #{$active-border-color};
@@ -21,6 +22,8 @@
   white-space: nowrap;
   box-shadow: var(--#{$prefix}btn-box-shadow);
   position: relative;
+  min-width: calc((var(--#{$prefix}btn-line-height) * 1) + (var(--#{$prefix}btn-padding-y) * 2) + (var(--#{$prefix}btn-border-width) * 2));
+  min-height: calc((var(--#{$prefix}btn-line-height) * 1) + (var(--#{$prefix}btn-padding-y) * 2) + (var(--#{$prefix}btn-border-width) * 2));
 
   .icon {
     width: var(--#{$prefix}btn-icon-size);
@@ -29,7 +32,7 @@
     font-size: var(--#{$prefix}btn-icon-size);
     margin: 0 calc(var(--#{$prefix}btn-padding-x) / 2) 0 calc(var(--#{$prefix}btn-padding-x) / -4);
     vertical-align: bottom;
-    color: inherit;
+    color: var(--#{$prefix}btn-icon-color);
   }
 
   .avatar {
@@ -38,7 +41,8 @@
     margin: 0 calc(var(--#{$prefix}btn-padding-x) / 2) 0 calc(var(--#{$prefix}btn-padding-x) / -4);
   }
 
-  .icon-right {
+  .icon-right,
+  .icon-end {
     margin: 0 calc(var(--#{$prefix}btn-padding-x) / -4) 0 calc(var(--#{$prefix}btn-padding-x) / 2);
   }
 
@@ -72,9 +76,9 @@
 //
 // Button color variations
 //
-@each $color, $value in $theme-colors {
+@each $color, $value in map.merge($theme-colors, $social-colors) {
   .btn-#{$color} {
-    @if $color == 'dark' {
+    @if $color == "dark" {
       --#{$prefix}btn-border-color: var(--#{$prefix}dark-mode-border-color);
       --#{$prefix}btn-hover-border-color: var(--#{$prefix}dark-mode-border-active-color);
       --#{$prefix}btn-active-border-color: var(--#{$prefix}dark-mode-border-active-color);
@@ -84,7 +88,7 @@
       --#{$prefix}btn-active-border-color: transparent;
     }
 
-    --#{$prefix}btn-color: var(--#{$prefix}#{$color}-fg);
+    --#{$prefix}btn-color: var(--#{$prefix}#{$color}-fg, #{$white});
     --#{$prefix}btn-bg: var(--#{$prefix}#{$color});
     --#{$prefix}btn-hover-color: var(--#{$prefix}#{$color}-fg);
     --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$color}-darken);
@@ -92,10 +96,11 @@
     --#{$prefix}btn-active-bg: var(--#{$prefix}#{$color}-darken);
     --#{$prefix}btn-disabled-bg: var(--#{$prefix}#{$color});
     --#{$prefix}btn-disabled-color: var(--#{$prefix}#{$color}-fg);
-    --#{$prefix}btn-box-shadow: var(--#{$prefix}box-shadow-input);
+    --#{$prefix}btn-box-shadow: var(--#{$prefix}shadow-input);
   }
 
-  .btn-outline-#{$color} {
+  .btn-outline-#{$color},
+  .btn-outline.btn-#{$color} {
     --#{$prefix}btn-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-bg: transparent;
     --#{$prefix}btn-border-color: var(--#{$prefix}#{$color});
@@ -104,24 +109,33 @@
     --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$color});
     --#{$prefix}btn-active-color: var(--#{$prefix}#{$color}-fg);
     --#{$prefix}btn-active-bg: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-active-border-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-disabled-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-disabled-border-color: var(--#{$prefix}#{$color});
   }
-}
 
-@each $name, $color in $theme-colors {
-  .btn-ghost-#{$name} {
-    --#{$prefix}btn-color: var(--#{$prefix}#{$name});
+  .btn-ghost {
     --#{$prefix}btn-bg: transparent;
     --#{$prefix}btn-border-color: transparent;
-    --#{$prefix}btn-hover-color: var(--#{$prefix}#{$name}-fg);
-    --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$name});
-    --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$name});
-    --#{$prefix}btn-active-color: var(--#{$prefix}#{$name}-fg);
-    --#{$prefix}btn-active-bg: var(--#{$prefix}#{$name});
+    --#{$prefix}btn-box-shadow: none;
+    --#{$prefix}btn-hover-bg: var(--#{$prefix}bg-surface-secondary);
+    --#{$prefix}btn-hover-border-color: transparent;
+    --#{$prefix}btn-hover-color: var(--#{$prefix}body-color);
+  }
+
+  .btn-ghost-#{$color},
+  .btn-ghost.btn-#{$color} {
+    --#{$prefix}btn-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-border-color: transparent;
+    --#{$prefix}btn-hover-color: var(--#{$prefix}#{$color}-fg);
+    --#{$prefix}btn-hover-bg: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-hover-border-color: var(--#{$prefix}#{$color});
+    --#{$prefix}btn-active-color: var(--#{$prefix}#{$color}-fg);
+    --#{$prefix}btn-active-bg: var(--#{$prefix}#{$color});
     --#{$prefix}btn-active-border-color: transparent;
     --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
-    --#{$prefix}btn-disabled-color: var(--#{$prefix}#{$name});
+    --#{$prefix}btn-disabled-color: var(--#{$prefix}#{$color});
     --#{$prefix}btn-disabled-bg: transparent;
     --#{$prefix}btn-disabled-border-color: transparent;
     --#{$prefix}gradient: none;
@@ -132,14 +146,25 @@
 //
 // Button sizes
 //
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm,
+.btn-group-sm > .btn {
   --#{$prefix}btn-line-height: #{$input-btn-line-height-sm};
   --#{$prefix}btn-icon-size: #{$input-btn-icon-size-sm};
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg,
+.btn-group-lg > .btn {
   --#{$prefix}btn-line-height: #{$input-btn-line-height-lg};
   --#{$prefix}btn-icon-size: #{$input-btn-icon-size-lg};
+}
+
+.btn-xl,
+.btn-group-xl > .btn {
+  --#{$prefix}btn-line-height: #{$input-btn-line-height-xl};
+  --#{$prefix}btn-icon-size: #{$input-btn-icon-size-xl};
+  --#{$prefix}btn-padding-y: #{$input-btn-padding-y-xl};
+  --#{$prefix}btn-padding-x: #{$input-btn-padding-x-xl};
+  --#{$prefix}btn-font-size: #{$input-btn-font-size-xl};
 }
 
 //
@@ -162,15 +187,18 @@
 //
 // Icon button
 //
-.btn-icon {
-  min-width: calc((var(--#{$prefix}btn-line-height) * var(--#{$prefix}btn-font-size)) + (var(--#{$prefix}btn-padding-y) * 2) + (var(--#{$prefix}btn-border-width) * 2));
-  min-height: calc((var(--#{$prefix}btn-line-height) * var(--#{$prefix}btn-font-size)) + (var(--#{$prefix}btn-padding-y) * 2) + (var(--#{$prefix}btn-border-width) * 2));
+.btn-icon,
+.btn-action {
   padding-left: 0;
   padding-right: 0;
 
   .icon {
     margin: calc(-1 * var(--#{$prefix}btn-padding-x));
   }
+  //[BUG] btn-sm and btn-xl with an icon looks broken
+  //issue #2470 fixed
+  min-width: calc(var(--#{$prefix}btn-icon-size) + (var(--#{$prefix}btn-padding-x) * 2));
+  min-height: calc(var(--#{$prefix}btn-icon-size) + (var(--#{$prefix}btn-padding-y) * 2));
 }
 
 //
@@ -186,9 +214,9 @@
 .btn-floating {
   position: fixed;
   z-index: $zindex-fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  border-radius: $border-radius-pill;
+  bottom: 1rem;
+  left: 1rem;
+  box-shadow: var(--#{$prefix}shadow-dropdown);
 }
 
 //
@@ -217,7 +245,7 @@
     height: var(--#{$prefix}btn-icon-size);
     left: calc(50% - var(--#{$prefix}btn-icon-size) / 2);
     top: calc(50% - var(--#{$prefix}btn-icon-size) / 2);
-    animation: spinner-border .75s linear infinite;
+    animation: spinner-border 0.75s linear infinite;
   }
 }
 
@@ -226,14 +254,7 @@
 //
 .btn-action {
   --#{$prefix}border-color: transparent;
-  padding: 0;
-  border: 0;
   color: var(--#{$prefix}secondary);
-  display: inline-flex;
-  width: 2rem;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
   border-radius: var(--#{$prefix}border-radius);
   background: transparent;
   box-shadow: none;
@@ -251,6 +272,7 @@
   &.show {
     color: var(--#{$prefix}body-color);
     background: var(--#{$prefix}active-bg);
+    border-color: transparent;
   }
 
   &.show {
@@ -260,4 +282,65 @@
 
 .btn-actions {
   display: flex;
+}
+
+.btn-animate-icon {
+  .icon {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    .icon {
+      transform: translateX(4px);
+    }
+  }
+
+  &.btn-animate-icon-rotate {
+    &:hover,
+    &:focus-visible {
+      .icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  &.btn-animate-icon-move-start {
+    &:hover,
+    &:focus-visible {
+      .icon {
+        transform: translateX(-4px);
+      }
+    }
+  }
+
+  &.btn-animate-icon-pulse {
+    &:hover,
+    &:focus-visible {
+      .icon {
+        transform: none;
+        animation: pulse 0.9s;
+      }
+    }
+  }
+
+  &.btn-animate-icon-shake {
+    &:hover,
+    &:focus-visible {
+      .icon {
+        transform: none;
+        animation: shake 0.9s;
+      }
+    }
+  }
+
+  &.btn-animate-icon-tada {
+    &:hover,
+    &:focus-visible {
+      .icon {
+        transform: none;
+        animation: tada 0.9s;
+      }
+    }
+  }
 }

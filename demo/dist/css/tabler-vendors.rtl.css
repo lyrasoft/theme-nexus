@@ -1,9 +1,3 @@
-/*!
- * Tabler Vendors v1.0.0 (https://tabler.io)
- * Copyright 2018-2025 The Tabler Authors
- * Copyright 2018-2025 codecalm.net Paweł Kuna
- * Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
- */
 /**
  * Converts a given value to a percentage string.
  *
@@ -55,7 +49,7 @@
   margin: 1px 0 0 1px;
 }
 .noUi-handle.noUi-active, .noUi-handle:focus {
-  box-shadow: 0 0 0 1px #f6f8fb, 0 0 0 0.25rem rgba(var(--tblr-primary-rgb), 0.25);
+  box-shadow: 0 0 0 1px #f9fafb, 0 0 0 0.25rem rgba(var(--tblr-primary-rgb), 0.25);
 }
 
 .noUi-connect {
@@ -115,11 +109,12 @@
   }
 }
 .datepicker-inline .litepicker {
-  box-shadow: var(--tblr-box-shadow-input);
+  box-shadow: var(--tblr-shadow-input);
 }
 .datepicker-inline .litepicker .container__months {
   box-shadow: none;
   background-color: var(--tblr-bg-forms);
+  border-radius: calc(var(--tblr-border-radius) - 1px);
 }
 
 :root {
@@ -129,6 +124,10 @@
 
 .ts-input {
   color: inherit;
+}
+
+.focus .ts-control {
+  border-radius: var(--tblr-border-radius);
 }
 
 .ts-control {
@@ -141,7 +140,7 @@
 
 .ts-wrapper .form-control,
 .ts-wrapper .form-select, .ts-wrapper.form-control, .ts-wrapper.form-select {
-  box-shadow: var(--tblr-box-shadow-input);
+  box-shadow: var(--tblr-shadow-input);
 }
 .ts-wrapper.is-invalid .ts-control, .ts-wrapper.is-valid .ts-control {
   --ts-pr-clear-button: 1.5rem;
@@ -150,7 +149,7 @@
 .ts-dropdown {
   background: var(--tblr-bg-surface);
   color: var(--tblr-body-color);
-  box-shadow: var(--tblr-box-shadow-dropdown);
+  box-shadow: var(--tblr-shadow-dropdown);
   z-index: 1000;
 }
 .ts-dropdown .option {
@@ -163,11 +162,11 @@
 }
 
 .ts-control input::-moz-placeholder {
-  color: #8a97ab;
+  color: var(--tblr-tertiary);
 }
 
 .ts-control input::placeholder {
-  color: #8a97ab;
+  color: var(--tblr-tertiary);
 }
 
 .ts-wrapper.multi .ts-control > div,
@@ -185,8 +184,8 @@
 }
 
 .apexcharts-tooltip {
-  color: var(--tblr-light) !important;
-  background: var(--tblr-bg-surface-dark) !important;
+  color: var(--tblr-text-inverted) !important;
+  background: var(--tblr-bg-surface-inverted) !important;
   font-size: 0.765625rem !important;
   padding: 0.25rem !important;
   box-shadow: none !important;
@@ -233,11 +232,16 @@
   border-radius: inherit;
 }
 
+.apexcharts-pie-area {
+  stroke: var(--tblr-bg-surface) !important;
+}
+
 .jvm-tooltip {
-  background: #182433;
+  background: var(--tblr-bg-surface-inverted);
+  color: var(--tblr-text-inverted);
   font-family: inherit;
   font-size: 0.75rem;
-  box-shadow: var(--tblr-box-shadow-card);
+  box-shadow: var(--tblr-shadow-card);
 }
 
 .jvm-series-container .jvm-legend .jvm-legend-title {
@@ -271,7 +275,7 @@
   width: 1.5rem;
   height: 1.5rem;
   font-size: 1rem;
-  box-shadow: var(--tblr-box-shadow-card);
+  box-shadow: var(--tblr-shadow-card);
 }
 .jvm-zoom-btn.jvm-zoomout {
   top: 2.5rem;
@@ -302,7 +306,7 @@
 
 .fslightbox-container {
   font-family: inherit !important;
-  background: rgba(24, 36, 51, 0.24) !important;
+  background: var(--tblr-backdrop-bg) !important;
   -webkit-backdrop-filter: blur(4px) !important;
   backdrop-filter: blur(4px) !important;
 }
@@ -319,7 +323,7 @@ body {
   --plyr-color-main: var(--tblr-primary);
 }
 
-.tox-tinymce {
+.tox-hugerte {
   border: var(--tblr-border-width) var(--tblr-border-style) var(--tblr-border-color) !important;
   border-radius: 6px !important;
   font-family: var(--tblr-font-sans-serif) !important;
@@ -333,7 +337,7 @@ body {
   background: transparent !important;
 }
 
-.tox:not(.tox-tinymce-inline) .tox-editor-header {
+.tox:not(.tox-hugerte-inline) .tox-editor-header {
   border-bottom: var(--tblr-border-width) var(--tblr-border-style) var(--tblr-border-color) !important;
   box-shadow: none !important;
   padding: 0 !important;
@@ -341,6 +345,14 @@ body {
 
 .tox-tbtn {
   margin: 0 !important;
+  background: var(--tblr-bg-surface) !important;
+}
+.tox-tbtn:hover, .tox-tbtn.tox-tbtn--enabled {
+  background: var(--tblr-bg-surface-secondary) !important;
+}
+
+.tox-edit-area::before {
+  border: none !important;
 }
 
 .tox-statusbar {
@@ -348,7 +360,7 @@ body {
 }
 
 .tox .tox-toolbar-overlord,
-.tox:not(.tox-tinymce-inline) .tox-editor-header {
+.tox:not(.tox-hugerte-inline) .tox-editor-header {
   background: transparent !important;
 }
 
@@ -372,8 +384,13 @@ body {
 }
 
 .clr-picker {
-  box-shadow: var(--tblr-box-shadow-dropdown);
+  box-shadow: var(--tblr-shadow-dropdown);
   background-color: var(--tblr-bg-surface);
+  border-radius: var(--tblr-border-radius);
+}
+
+.clr-gradient {
+  border-radius: var(--tblr-border-radius) var(--tblr-border-radius) 0 0;
 }
 
 input.clr-color {
@@ -432,6 +449,64 @@ input.clr-color:focus {
 
 .typed-cursor {
   font-weight: 500;
-  color: #6c7a91;
+  color: #6b7280;
+}
+
+.turbo-progress-bar {
+  background: var(--tblr-primary);
+}
+
+:root {
+  --fc-border-color: var(--tblr-border-color);
+  --fc-daygrid-event-dot-width: 5px;
+  --fc-event-bg-color: var(--tblr-primary-lt);
+  --fc-event-border-color: var(--tblr-primary-200);
+  --fc-event-text-color: var(--tblr-body-color);
+}
+
+.fc-toolbar-title {
+  font-size: var(--tblr-font-size-h3) !important;
+  font-weight: var(--tblr-font-weight-medium);
+}
+
+.fc-daygrid-dot-event {
+  background-color: var(--fc-event-bg-color);
+  border: 1px solid var(--fc-event-border-color);
+  color: var(--fc-event-text-color);
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.fc-daygrid-dot-event .fc-event-title {
+  font-weight: inherit;
+}
+
+.fc-col-header-cell {
+  background-color: var(--tblr-bg-surface-secondary);
+  color: var(--tblr-secondary);
+  text-transform: uppercase;
+  font-weight: var(--tblr-font-weight-medium);
+  font-size: var(--tblr-font-size-h5);
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  line-height: 1;
+}
+
+.fc-event-time {
+  font-weight: var(--tblr-font-weight-bold) !important;
+}
+
+.fc-col-header-cell-cushion {
+  color: inherit;
+}
+
+.fc-daygrid-day-number {
+  color: var(--tblr-secondary);
+}
+
+.fc-button {
+  color: var(--tblr-body-color) !important;
+  background-color: transparent !important;
+  border-color: var(--tblr-border-color) !important;
+  font-weight: var(--tblr-font-weight-medium) !important;
 }
 /*# sourceMappingURL=tabler-vendors.rtl.css.map */

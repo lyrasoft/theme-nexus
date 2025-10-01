@@ -1,4 +1,5 @@
 import { domready, useUniDirective } from '@windwalker-io/unicorn-next';
+import { Collapse } from 'bootstrap';
 
 let nexus: NexusTheme;
 
@@ -69,7 +70,7 @@ class NexusTheme {
         continue;
       }
 
-      const menuCollapse = u.$ui.bootstrap.collapse(menu, { toggle: false });
+      const menuCollapse = Collapse.getOrCreateInstance(menu, { toggle: false });
 
       menuButton.addEventListener('click', () => {
         const show = menuButton.classList.toggle('show');
