@@ -9,7 +9,7 @@
     ],
     "minimum-stability": "beta",
     "require-dev": {
-        "windwalker/core": "^4.0"
+        "windwalker/core": "^4.2"
     },
     "autoload": {
         "psr-4": {

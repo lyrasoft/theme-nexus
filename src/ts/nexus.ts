@@ -1,14 +1,23 @@
+import { domready, useUniDirective } from '@windwalker-io/unicorn-next';
 
-import '@main';
-import type { UnicornApp } from '@windwalker-io/unicorn/types/unicorn';
+let nexus: NexusTheme;
+
+export function useNexusTheme() {
+  nexus ??= new NexusTheme().init();
+
+  return nexus;
+}
 
 class NexusTheme {
-  static install(app: UnicornApp, options?: any): void {
-    const nexus = app.$nexus = new this(app);
-  }
+  init() {
+    domready(() => {
+      this.initRipple();
+      this.initSidebarToggle();
+      this.initSidebarMenu();
+      this.initFullscreen();
+    });
 
-  constructor(public app: UnicornApp) {
-    //
+    return this;
   }
 
   initRipple() {
@@ -16,7 +25,7 @@ class NexusTheme {
       return;
     }
 
-    u.directive('ripple', {
+    useUniDirective('ripple', {
       mounted(el, { value }) {
         if (value) {
           value = JSON.parse(value);
@@ -100,15 +109,6 @@ class NexusTheme {
     }
   }
 }
-
-u.use(NexusTheme);
-
-const nexus = u.inject<NexusTheme>('$nexus');
-
-nexus.initRipple();
-nexus.initSidebarToggle();
-nexus.initSidebarMenu();
-nexus.initFullscreen();
 
 declare global {
   interface HTMLElement {
