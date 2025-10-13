@@ -1,31 +1,33 @@
 {
-  "name": "@lyrasoft/nexus",
-  "private": true,
-  "description": "",
-  "repository": "git@github.com:lyrasoft/theme-nexus.git",
-  "scripts": {
-    "build": "gulp",
-    "build:prod": "cross-env NODE_ENV=production gulp",
-    "watch": "gulp --watching=1",
-    "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules",
-    "postinstall": "yarn build install",
-    "upgrade": "yarn up '**' -R"
-  },
-  "devDependencies": {
-    "@types/bootstrap": "^5.2.10",
-    "@windwalker-io/fusion": "^1.1.6",
-    "@windwalker-io/unicorn": "^1.1.23",
-    "bootstrap": "^5.3.8",
-    "cross-env": "^7.0.3",
-    "gulp": "^4.0",
-    "ribble": "^1.0.4",
-    "sass": "^1.85.0",
-    "typescript": "^5.7.3",
-    "vanilla-ripplejs": "^1.0.6"
-  },
-  "resolutions": {
-    "micromatch": "^4.0.8",
-    "postcss": "^8.4.31",
-    "sass": "1.77.6"
-  }
+    "name": "@lyrasoft/nexus",
+    "type": "module",
+    "main": "src/ts/nexus.ts",
+    "private": true,
+    "description": "",
+    "repository": "git@github.com:lyrasoft/theme-nexus.git",
+    "scripts": {
+        "build": "gulp",
+        "build:prod": "cross-env NODE_ENV=production gulp",
+        "watch": "gulp --watching=1",
+        "css": "sass src/scss/main.scss:demo/dist/css/tabler.css --no-source-map --load-path=node_modules",
+        "postinstall": "yarn build install",
+        "upgrade": "yarn up '**' -R"
+    },
+    "devDependencies": {
+        "@types/bootstrap": "^5.2.10",
+        "@windwalker-io/fusion": "^1.1.6",
+        "@windwalker-io/unicorn": "^1.1.23",
+        "bootstrap": "^5.3.8",
+        "cross-env": "^7.0.3",
+        "gulp": "^4.0",
+        "ribble": "^1.0.4",
+        "sass": "^1.85.0",
+        "typescript": "^5.7.3",
+        "vanilla-ripplejs": "^1.0.6"
+    },
+    "resolutions": {
+        "micromatch": "^4.0.8",
+        "postcss": "^8.4.31",
+        "sass": "1.77.6"
+    }
 }

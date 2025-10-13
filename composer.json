@@ -20,7 +20,12 @@
         "windwalker": {
             "packages": [
                 "Lyrasoft\\Theme\\Nexus\\NexusPackage"
-            ]
+            ],
+            "assets": {
+                "vendors": {
+                    "@lyrasoft/nexus": "portal:./vendor/lyrasoft/theme-nexus"
+                }
+            }
         }
     }
 }
