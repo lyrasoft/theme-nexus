@@ -1,31 +1,44 @@
-System.register(["@main"], function (exports_1, context_1) {
+System.register(["@windwalker-io/unicorn-next", "bootstrap"], function (exports_1, context_1) {
     "use strict";
-    var NexusTheme, nexus;
+    var unicorn_next_1, bootstrap_1, nexus, NexusTheme;
     var __moduleName = context_1 && context_1.id;
+    function useNexusTheme() {
+        nexus ?? (nexus = new NexusTheme().init());
+        return nexus;
+    }
+    exports_1("useNexusTheme", useNexusTheme);
     return {
         setters: [
-            function (_1) {
+            function (unicorn_next_1_1) {
+                unicorn_next_1 = unicorn_next_1_1;
+            },
+            function (bootstrap_1_1) {
+                bootstrap_1 = bootstrap_1_1;
             }
         ],
         execute: function () {
             NexusTheme = class NexusTheme {
-                static install(app, options) {
-                    const nexus = app.$nexus = new this(app);
-                }
-                constructor(app) {
-                    Object.defineProperty(this, "app", {
-                        enumerable: true,
-                        configurable: true,
-                        writable: true,
-                        value: app
+                init() {
+                    unicorn_next_1.domready(() => {
+                        this.initRipple();
+                        this.initSidebarToggle();
+                        this.initSidebarMenu();
+                        this.initFullscreen();
                     });
-                    //
+                    unicorn_next_1.useMacro('logout', async (url, data) => {
+                        if (!url) {
+                            throw new Error('Please provide logout URL.');
+                        }
+                        const form = await unicorn_next_1.useFormAsync();
+                        return form.post(url, data);
+                    });
+                    return this;
                 }
                 initRipple() {
                     if (!window.Ribble) {
                         return;
                     }
-                    u.directive('ripple', {
+                    unicorn_next_1.useUniDirective('ripple', {
                         mounted(el, { value }) {
                             if (value) {
                                 value = JSON.parse(value);
@@ -62,7 +75,7 @@ System.register(["@main"], function (exports_1, context_1) {
                         if (!menu) {
                             continue;
                         }
-                        const menuCollapse = u.$ui.bootstrap.collapse(menu, { toggle: false });
+                        const menuCollapse = bootstrap_1.Collapse.getOrCreateInstance(menu, { toggle: false });
                         menuButton.addEventListener('click', () => {
                             const show = menuButton.classList.toggle('show');
                             if (show) {
@@ -98,12 +111,6 @@ System.register(["@main"], function (exports_1, context_1) {
                     }
                 }
             };
-            u.use(NexusTheme);
-            nexus = u.inject('$nexus');
-            nexus.initRipple();
-            nexus.initSidebarToggle();
-            nexus.initSidebarMenu();
-            nexus.initFullscreen();
         }
     };
 });
