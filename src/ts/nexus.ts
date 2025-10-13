@@ -1,4 +1,4 @@
-import { domready, useUniDirective } from '@windwalker-io/unicorn-next';
+import { domready, useFormAsync, useMacro, useUniDirective } from '@windwalker-io/unicorn-next';
 import { Collapse } from 'bootstrap';
 
 let nexus: NexusTheme;
@@ -16,6 +16,15 @@ class NexusTheme {
       this.initSidebarToggle();
       this.initSidebarMenu();
       this.initFullscreen();
+    });
+
+    useMacro('logout', async (url: string, data?: any) => {
+      if (!url) {
+        throw new Error('Please provide logout URL.');
+      }
+
+      const form = await useFormAsync();
+      return form.post(url, data);
     });
 
     return this;
@@ -85,7 +94,7 @@ class NexusTheme {
   }
 
   initFullscreen() {
-    const fullScreenButtons = document.querySelectorAll<HTMLAnchorElement|HTMLButtonElement>('[data-nx-toggle=fullscreen]');
+    const fullScreenButtons = document.querySelectorAll<HTMLAnchorElement | HTMLButtonElement>('[data-nx-toggle=fullscreen]');
 
     for (const fullScreenButton of fullScreenButtons) {
       fullScreenButton.addEventListener('click', () => {
@@ -106,7 +115,7 @@ class NexusTheme {
           || document.mozCancelFullScreen?.()
           || document.webkitCancelFullScreen?.();
         }
-      })
+      });
     }
   }
 }
@@ -116,9 +125,16 @@ declare global {
     mozRequestFullscreen?: Function;
     webkitRequestFullscreen?: Function;
   }
+
   interface Document {
     cancelFullscreen?: Function;
     mozCancelFullScreen?: Function;
     webkitCancelFullScreen?: Function;
+  }
+}
+
+declare module '@windwalker-io/unicorn-next' {
+  export interface UnicornApp {
+    logout: (url: string, data?: any) => Promise<boolean>;
   }
 }
