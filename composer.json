@@ -8,7 +8,8 @@
         }
     ],
     "minimum-stability": "beta",
-    "require-dev": {
+    "require": {
+        "php": ">=8.4.6",
         "windwalker/core": "^4.2"
     },
     "autoload": {
